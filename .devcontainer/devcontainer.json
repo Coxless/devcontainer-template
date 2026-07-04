@@ -11,6 +11,8 @@
 
   "remoteUser": "vscode",
 
+  "postCreateCommand": "grep -qxF 'eval \"$(mise activate bash)\"' ~/.bashrc || echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
+
   "remoteEnv": {
     "GH_TOKEN": "${localEnv:GH_TOKEN}"
   },
