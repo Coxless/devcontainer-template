@@ -1,0 +1,24 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/mise:1": {}
+  },
+
+  "remoteUser": "vscode",
+
+  "remoteEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  },
+
+  "mounts": [
+    "source=claude-code-config,target=/home/vscode/.claude,type=volume"
+  ],
+
+  "workspaceMount": "source=${localWorkspaceFolderBasename}-workspace,target=/workspace,type=volume",
+  "workspaceFolder": "/workspace"
+}
